@@ -15,7 +15,7 @@
                         // ['href' => 'inicio', 'name' => 'inicio', 'text' => 'Inicio'],
                         ['href' => 'dashboard', 'name' => 'dashboard', 'text' => 'Dashboard'],
                         ['href' => 'admin', 'name' => 'admin', 'text' => 'Adminitrar Usuarios'],
-                        ['href' => 'dashboard', 'name' => 'estudiantes', 'text' => 'Consulta'],
+                        ['href' => 'consulta', 'name' => 'consulta', 'text' => 'Consulta'],
 
                     ];
                 @endphp

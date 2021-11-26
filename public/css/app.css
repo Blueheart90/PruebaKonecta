@@ -765,6 +765,39 @@ select {
 [type='file']:focus {
 	outline: 1px auto -webkit-focus-ring-color;
 }
+.container {
+	width: 100%;
+}
+@media (min-width: 640px) {
+
+	.container {
+		max-width: 640px;
+	}
+}
+@media (min-width: 768px) {
+
+	.container {
+		max-width: 768px;
+	}
+}
+@media (min-width: 1024px) {
+
+	.container {
+		max-width: 1024px;
+	}
+}
+@media (min-width: 1280px) {
+
+	.container {
+		max-width: 1280px;
+	}
+}
+@media (min-width: 1536px) {
+
+	.container {
+		max-width: 1536px;
+	}
+}
 .prose {
 	color: #374151;
 	max-width: 65ch;
@@ -1191,8 +1224,17 @@ select {
 .-mt-px {
 	margin-top: -1px;
 }
+.mb-8 {
+	margin-bottom: 2rem;
+}
+.mb-16 {
+	margin-bottom: 4rem;
+}
 .block {
 	display: block;
+}
+.inline {
+	display: inline;
 }
 .flex {
 	display: flex;
@@ -1238,6 +1280,9 @@ select {
 }
 .h-full {
 	height: 100%;
+}
+.h-screen {
+	height: 100vh;
 }
 .min-h-screen {
 	min-height: 100vh;
@@ -1293,6 +1338,12 @@ select {
 .w-80 {
 	width: 20rem;
 }
+.w-screen {
+	width: 100vw;
+}
+.w-3\/5 {
+	width: 60%;
+}
 .min-w-0 {
 	min-width: 0px;
 }
@@ -1310,6 +1361,12 @@ select {
 }
 .max-w-6xl {
 	max-width: 72rem;
+}
+.max-w-md {
+	max-width: 28rem;
+}
+.max-w-lg {
+	max-width: 32rem;
 }
 .flex-1 {
 	flex: 1 1 0%;
@@ -1473,6 +1530,9 @@ select {
 .border-b {
 	border-bottom-width: 1px;
 }
+.border-r {
+	border-right-width: 1px;
+}
 .border-gray-300 {
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
@@ -1503,6 +1563,10 @@ select {
 .border-blue-500 {
 	--tw-border-opacity: 1;
 	border-color: rgba(59, 130, 246, var(--tw-border-opacity));
+}
+.border-gray-400 {
+	--tw-border-opacity: 1;
+	border-color: rgba(156, 163, 175, var(--tw-border-opacity));
 }
 .bg-white {
 	--tw-bg-opacity: 1;
@@ -1575,6 +1639,10 @@ select {
 .bg-blue-100 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(219, 234, 254, var(--tw-bg-opacity));
+}
+.bg-blue-600 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
@@ -1667,6 +1735,10 @@ select {
 	padding-left: 2.25rem;
 	padding-right: 2.25rem;
 }
+.px-5 {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
 .pt-6 {
 	padding-top: 1.5rem;
 }
@@ -1745,6 +1817,10 @@ select {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 }
+.text-5xl {
+	font-size: 3rem;
+	line-height: 1;
+}
 .font-medium {
 	font-weight: 500;
 }
@@ -1753,6 +1829,9 @@ select {
 }
 .font-bold {
 	font-weight: 700;
+}
+.font-light {
+	font-weight: 300;
 }
 .uppercase {
 	text-transform: uppercase;
@@ -1769,8 +1848,14 @@ select {
 .leading-4 {
 	line-height: 1rem;
 }
+.leading-normal {
+	line-height: 1.5;
+}
 .tracking-widest {
 	letter-spacing: 0.1em;
+}
+.tracking-wider {
+	letter-spacing: 0.05em;
 }
 .text-gray-500 {
 	--tw-text-opacity: 1;
@@ -1848,6 +1933,10 @@ select {
 	--tw-text-opacity: 1;
 	color: rgba(59, 130, 246, var(--tw-text-opacity));
 }
+.text-blue-600 {
+	--tw-text-opacity: 1;
+	color: rgba(37, 99, 235, var(--tw-text-opacity));
+}
 .underline {
 	text-decoration: underline;
 }
@@ -1915,6 +2004,11 @@ select {
 }
 .transition-all {
 	transition-property: all;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+}
+.transition-colors {
+	transition-property: background-color, border-color, color, fill, stroke;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
 }
@@ -1989,6 +2083,10 @@ select {
 .hover\:bg-blue-600:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
+}
+.hover\:bg-blue-700:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(29, 78, 216, var(--tw-bg-opacity));
 }
 .hover\:text-gray-500:hover {
 	--tw-text-opacity: 1;
@@ -2116,6 +2214,10 @@ select {
 .active\:bg-gray-50:active {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
+}
+.active\:bg-blue-600:active {
+	--tw-bg-opacity: 1;
+	background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
 }
 .active\:text-gray-700:active {
 	--tw-text-opacity: 1;
@@ -2363,6 +2465,10 @@ select {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 
+	.md\:flex-row {
+		flex-direction: row;
+	}
+
 	.md\:gap-6 {
 		gap: 1.5rem;
 	}
@@ -2373,6 +2479,11 @@ select {
 
 	.md\:border-l {
 		border-left-width: 1px;
+	}
+
+	.md\:text-3xl {
+		font-size: 1.875rem;
+		line-height: 2.25rem;
 	}
 }
 @media (min-width: 1024px) {
