@@ -26,6 +26,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'role_id',
         'password',
     ];
 
@@ -57,6 +58,10 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+    ];
+
+    protected $attributes = [
+        'role_id' => 2,
     ];
 
     // Un usuario tiene un rol

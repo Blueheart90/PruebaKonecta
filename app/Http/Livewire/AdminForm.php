@@ -11,14 +11,16 @@ class AdminForm extends Component
     public $fields = [
         'name' => '',
         'email' => '',
-        'role_id' => '',
+        'role_id' => 0,
         'password' => '',
+        'password_confirmation' => '',
     ];
 
     protected $rules = [
         'fields.name' => 'required',
-        'fields.email' => 'required|email:filter|unique:estudiantes,email',
-        'fields.grade' => 'required',
+        'fields.email' => 'required|email:filter|unique:users,email',
+        'fields.role_id' => 'required',
+        'fields.password' => 'required|confirmed',
     ];
 
     
@@ -27,7 +29,9 @@ class AdminForm extends Component
         $validatedData = $this->validate();
         Log::debug($validatedData);
         User::create($validatedData['fields']);
-        $this->open = false;
+        $this->reset('fields');
+        session()->flash('success', 'Se creó un nuevo usuario');
+
     }
 
     public function render()

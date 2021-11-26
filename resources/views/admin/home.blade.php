@@ -5,68 +5,26 @@
         </h2>
     </x-slot> --}}
 
-    <div class="py-12">
+    <div x-data="{ showModalCreateUser : false}" class="py-12 ">
         <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="overflow-hidden bg-white shadow-xl sm:rounded-lg">
-                <x-jet-authentication-card>
-                    <x-slot name="logo">
-                        <x-jet-authentication-card-logo />
-                    </x-slot>
             
-                    <x-jet-validation-errors class="mb-4" />
-            
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-            
-                        <div>
-                            <x-jet-label for="name" value="{{ __('Name') }}" />
-                            <x-jet-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-                        </div>
-            
-                        <div class="mt-4">
-                            <x-jet-label for="email" value="{{ __('Email') }}" />
-                            <x-jet-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required />
-                        </div>
-            
-                        <div class="mt-4">
-                            <x-jet-label for="password" value="{{ __('Password') }}" />
-                            <x-jet-input id="password" class="block w-full mt-1" type="password" name="password" required autocomplete="new-password" />
-                        </div>
-            
-                        <div class="mt-4">
-                            <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
-                            <x-jet-input id="password_confirmation" class="block w-full mt-1" type="password" name="password_confirmation" required autocomplete="new-password" />
-                        </div>
-            
-                        @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-                            <div class="mt-4">
-                                <x-jet-label for="terms">
-                                    <div class="flex items-center">
-                                        <x-jet-checkbox name="terms" id="terms"/>
-            
-                                        <div class="ml-2">
-                                            {!! __('I agree to the :terms_of_service and :privacy_policy', [
-                                                    'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'" class="text-sm text-gray-600 underline hover:text-gray-900">'.__('Terms of Service').'</a>',
-                                                    'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'" class="text-sm text-gray-600 underline hover:text-gray-900">'.__('Privacy Policy').'</a>',
-                                            ]) !!}
-                                        </div>
-                                    </div>
-                                </x-jet-label>
-                            </div>
-                        @endif
-            
-                        <div class="flex items-center justify-end mt-4">
-                            <a class="text-sm text-gray-600 underline hover:text-gray-900" href="{{ route('login') }}">
-                                {{ __('Already registered?') }}
-                            </a>
-            
-                            <x-jet-button class="ml-4">
-                                {{ __('Register') }}
-                            </x-jet-button>
-                        </div>
-                    </form>
-                </x-jet-authentication-card>
+            <div class="relative mt-10 bg-white shadow-xl sm:rounded-lg">
+                
+                <button @click="showModalCreateUser = true" class="absolute left-0 flex p-2 text-white bg-blue-500 rounded-md -top-14 hover:bg-blue-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      Nuevo usuario
+                </button>
+                <livewire:show-users />
+                
             </div>
         </div>
+        <x-modal trigger="showModalCreateUser">
+            <livewire:admin-form />
+            
+        </x-modal>
+        <livewire:edit-user />
+        
     </div>
 </x-app-layout>
