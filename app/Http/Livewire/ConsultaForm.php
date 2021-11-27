@@ -28,10 +28,16 @@ class ConsultaForm extends Component
 
     public function showDay(){
 
+        // Validamos el request del formulario
         $validatedData = $this->validate();
+        
+        // Se obtiene el valor del array validado y se asigna el numero a una variable local
         $numero = $validatedData['numero'];
+
+        // Se accede la posiocion del array para obtener asi el dia de la semana
         $this->resultado = $this->dias[$numero];
 
+        // Cambiamos el valor del trigger que hara que se muestre el resultado
         $this->showResult = true;
     }
     public function render()

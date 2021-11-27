@@ -27,13 +27,14 @@ class AdminForm extends Component
     
 
     public function create() {
+
         $validatedData = $this->validate();
         $validatedData['fields']['password'] = Hash::make($validatedData['fields']['password']);
  
         User::create($validatedData['fields']);
         $this->reset('fields');
         
-        session()->flash('success', 'Se creó un nuevo usuario');
+        session()->flash('success', 'Se has creado un nuevo usuario');
 
     }
 
