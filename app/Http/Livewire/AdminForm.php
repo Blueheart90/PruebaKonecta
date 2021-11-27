@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\User;
 use Livewire\Component;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 
 class AdminForm extends Component
 {
@@ -20,16 +21,18 @@ class AdminForm extends Component
         'fields.name' => 'required',
         'fields.email' => 'required|email:filter|unique:users,email',
         'fields.role_id' => 'required',
-        'fields.password' => 'required|confirmed',
+        'fields.password' => 'required|confirmed|min:10',
     ];
 
     
 
     public function create() {
         $validatedData = $this->validate();
-        Log::debug($validatedData);
+        $validatedData['fields']['password'] = Hash::make($validatedData['fields']['password']);
+ 
         User::create($validatedData['fields']);
         $this->reset('fields');
+        
         session()->flash('success', 'Se creó un nuevo usuario');
 
     }

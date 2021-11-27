@@ -15,8 +15,6 @@
         </div>
     </form>
 
-    
-
     <div x-data="{ showResult : @entangle('showResult') }" class="">
         <div x-show="showResult" x-cloak>
             <h2 class="mb-4 text-lg text-center text-gray-600 ">Resultado</h2>
