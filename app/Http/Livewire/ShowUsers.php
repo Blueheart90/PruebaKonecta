@@ -10,7 +10,16 @@ class ShowUsers extends Component
 {
     public function delete(User $user) {
 
-        $user->delete();
+
+        // Se evitar eliminar el user que esta en sesion
+        if (auth()->user()->id != $user['id']) {
+   
+            $user->delete();
+
+        }else {
+            session()->flash('error', 'No puedes eliminar a un User activo');
+        }
+
     }
 
     public function edit() {

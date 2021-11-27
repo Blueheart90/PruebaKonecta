@@ -1,4 +1,4 @@
-<div>
+<div class="relative ">
     <table class="w-full text-left border-collapse ">
         <!--Border collapse doesn't work on this site yet but it's available in newer tailwind versions -->
         <thead>
@@ -50,5 +50,9 @@
 
         </tbody>
     </table>
+    <div class="absolute -bottom-14">
+        <x-flash-messages></x-flash-messages>
+
+    </div>
 </div>
 

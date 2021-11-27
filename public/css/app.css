@@ -1129,6 +1129,15 @@ select {
 .-top-14 {
 	top: -3.5rem;
 }
+.bottom-0 {
+	bottom: 0px;
+}
+.-bottom-full {
+	bottom: -100%;
+}
+.-bottom-14 {
+	bottom: -3.5rem;
+}
 .z-0 {
 	z-index: 0;
 }
