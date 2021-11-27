@@ -13,7 +13,7 @@
                 @php
                     $navLinks = [
                         // ['href' => 'inicio', 'name' => 'inicio', 'text' => 'Inicio'],
-                        ['href' => 'dashboard', 'name' => 'dashboard', 'text' => 'Dashboard'],
+                        ['href' => 'dashboard', 'name' => 'dashboard', 'text' => 'Profile'],
                         ['href' => 'admin', 'name' => 'admin', 'text' => 'Adminitrar Usuarios'],
                         ['href' => 'consulta', 'name' => 'consulta', 'text' => 'Consulta'],
 
